@@ -13,7 +13,13 @@ import Testimonios from '../components/Testimonios'
 import Faqs from '../components/Faqs'
 import Footer from '../components/Footer'
 
-const Inicio = () => {
+const Inicio = ({auth, setAuth} : {auth : boolean, setAuth : boolean}) => {
+  const links = [
+    { text: 'Inicio', url: '#' },
+    { text: 'Acerca De', url: '#acerca' },
+    { text: 'Testimonios', url: '#testimonios' },
+];
+
   return (
     <div className='bg-primary w-full overflow-hidden relative'>
 
@@ -25,7 +31,7 @@ const Inicio = () => {
 
       <header className={`${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
-          <Navbar />
+          <Navbar links={links} auth={auth} setAuth={setAuth}/>
         </div>
       </header>
 
@@ -90,7 +96,7 @@ const Inicio = () => {
 
       {/* ---------------- Componente de Testimonios ----------------------- */}
 
-      <section className={`bg-app-up ${styles.paddingX} ${styles.flexCenter}`}>
+      <section className={`bg-app-up ${styles.paddingX} ${styles.flexCenter}`} id='testimonios'>
         <div className={`${styles.boxWidth} z-[1000]`}>
           <Testimonios />
         </div>

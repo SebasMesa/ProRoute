@@ -178,8 +178,8 @@ body {
   filter: blur(100px);
 }
 
-.white__gradient {
-  background: rgba(255, 255, 255, 0.114);
+.white-blue__gradient {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.904) 0%, #0f1cd6a6 100%);
   filter: blur(750px);
 }
 
@@ -190,7 +190,7 @@ body {
 }
 
 .pink__gradient2 {
-  background: linear-gradient(90deg, #c004bde7 0%, #d60dd361 100%);
+  background: linear-gradient(90deg, #c004bd63 0%, #d60dd361 100%);
   filter: blur(150px);
   opacity: .2;
 }
@@ -214,13 +214,9 @@ body {
   opacity: 1;
   background-image: linear-gradient(#1f1f1f5b 2px, transparent 2px), linear-gradient(to right, #1f1f1f60 2px, #00040f 2px);
   background-size: 125px 125px;
-  mask-image: linear-gradient(
-    black 70%,
-    transparent
-    );
-  position: relative;
-  z-index: 1;
-  
+  mask-image: linear-gradient(black 70%,
+      transparent);
+
 }
 
 
@@ -229,16 +225,14 @@ body {
   opacity: 1;
   background-image: linear-gradient(#1f1f1f5b 2px, transparent 2px), linear-gradient(to right, #1f1f1f60 2px, #00040f 2px);
   background-size: 125px 125px;
-  mask-image: linear-gradient(
-    to top,
-    transparent 1%,
-    black 21%,
-    black 95%,
-    transparent 99%
-  );
+  mask-image: linear-gradient(to top,
+      transparent 1%,
+      black 21%,
+      black 95%,
+      transparent 99%);
   position: relative;
   z-index: 1;
-  
+
 }
 
 .bg-glass {
@@ -248,11 +242,55 @@ body {
 
 .bg-glass-purple {
   background: linear-gradient(-168.39deg,
-  #100d2eab -278.56%,
-  #00040fa6 -78.47%,
-  #11101da9 91.61%);
+      #100d2eab -278.56%,
+      #00040fa6 -78.47%,
+      #11101da9 91.61%);
   backdrop-filter: blur(3px);
   filter: drop-shadow(0px 4px 10px #11101df5);
+  /* position: relative; */
+  /* z-index: 1000; */
+}
+
+.bg-glass-yellow {
+  background: linear-gradient(-168.39deg,
+      #e7db5dab -278.56%,
+      #d4c40fa6 -78.47%,
+      #ada91da9 91.61%);
+  backdrop-filter: blur(3px);
+  filter: drop-shadow(0px 4px 10px #ada91df5);
+  position: relative;
+}
+
+
+.bg-glass-blue {
+  background: linear-gradient(-168.39deg,
+      #1a215dab -278.56%,
+      #0f1cd6a6 -78.47%,
+      #1a2e7da9 91.61%);
+  backdrop-filter: blur(3px);
+  filter: drop-shadow(0px 4px 10px #1a2e7df5);
+  position: relative;
+  z-index: 1000;
+}
+
+.bg-glass-red {
+  background: linear-gradient(-168.39deg,
+      #5d1f1fab -278.56%,
+      #d60f0fa6 -78.47%,
+      #7d1a1aa9 91.61%);
+  backdrop-filter: blur(3px);
+  filter: drop-shadow(0px 4px 10px #7d1a1af5);
+  position: relative;
+  z-index: 1000;
+}
+
+.bg-glass-green {
+  background: linear-gradient(-168.39deg,
+      #1f5d30ab -278.56%,
+      #0fd649a6 -78.47%,
+      #1a7d4fa9 91.61%);
+  backdrop-filter: blur(3px);
+  filter: drop-shadow(0px 4px 10px #1a7d4ff5);
   position: relative;
   z-index: 1000;
 }
@@ -260,14 +298,18 @@ body {
 /* Barra de progreso */
 
 .wrapper {
-  border: 1px solid #11101d;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .container {
-background-color: rgba(1, 0, 8, 0.315);
+  background-color: rgba(1, 0, 8, 0.315);
 }
 
-.gridNews {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+.image {
+  background-image: url('./assets/pythonLatam.jpeg');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.295);
 }

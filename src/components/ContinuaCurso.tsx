@@ -4,28 +4,33 @@ import styles from '../styles'
 import CursosCardEmpty from './CursosCardEmpty'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import { FiBook } from "react-icons/fi";
+import { IoMdCode } from "react-icons/io";
+import { GoDatabase } from "react-icons/go";
+
+
 
 const ContinuaCurso = () => {
     const cursos = [
         {
             id: 1,
-            title: 'Desarrollo Web',
-            description: 'Aprende a desarrollar paginas web',
-            image: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png',
+            title: 'Introduccion a Desarrollo Web',
+            description: 'Aprende los fundamentos del Desarrollo Web, incluyendo HTML, CSS y JavaScript',
+            image: <FiBook className='text-secondary' size={'35px'}/>,
             valor: 50
         },
         {
             id: 2,
-            title: 'Data Science',
-            description: 'Aprende Data Science',
-            image: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png',
+            title: 'Conceptos avanzados de JavaScript',
+            description: 'Profundice en JavaScript y aprenda técnicas y patrones avanzados.',
+            image: <IoMdCode className='text-secondary' size={'35px'}/>,
             valor: 20
         },
         {
             id: 3,
-            title: 'Inteligencia Artificial',
-            description: 'Aprende Inteligencia Artificial',
-            image: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png',
+            title: 'Diseño y gestión de bases de datos',
+            description: 'Aprenda a diseñar y gestionar bases de datos para sus aplicaciones.',
+            image: <GoDatabase className='text-secondary' size={'35px'}/>,
             valor: 70
         },
     ]
@@ -38,14 +43,14 @@ const ContinuaCurso = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-10'>
                 {cursos.length > 0 ? (
                     cursos.map((curso) => (
-                        <CursosCard key={curso.id} curso={curso} image={curso.image} description={curso.description} title={curso.title} valor={curso.valor} />
+                        <CursosCard key={curso.id} image={curso.image} description={curso.description} title={curso.title} valor={curso.valor} />
                     ))
                 ) : (
                     <CursosCardEmpty />
                 )}
             </div>
 
-            <Link to={'/cursos'} className='flex justify-end mt-[2rem]'>
+            <Link to={'/courses'} className='flex justify-end mt-[2rem]'>
                 <Button title={'Ver todos mis cursos'}></Button>
             </Link>
 

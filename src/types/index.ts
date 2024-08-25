@@ -7,6 +7,7 @@ export type Props = {
 
 export type PropsLink = Props & { 
     link?: string
+    typeOfLink?: string
 }
 
 export type CardProps = {
@@ -14,6 +15,18 @@ export type CardProps = {
     icono?: IconType
     descripcion: string
 }
+
+export type UserData = {
+    name: string
+    email: string
+    gender: string
+}
+
+export type UndrawSVGProps = {
+    color?: string;
+    size?: number | string;
+    style?: React.CSSProperties;
+  };
 
 // export type MarqueeProps {
 //     descri:
