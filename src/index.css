@@ -313,3 +313,7 @@ body {
   height: 100%;
   color: rgba(0, 0, 0, 0.295);
 }
+
+.active svg {
+  fill: red;
+}

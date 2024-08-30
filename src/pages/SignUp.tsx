@@ -8,12 +8,10 @@ import Footer from '../components/Footer';
 type LoginProps = {
     handleForm: (e: React.FormEvent<HTMLFormElement>) => void;
     error: string[];
-  };
+};
 
-  const Login: React.FC<LoginProps> = ({ handleForm, error }) => {
+const SignUp: React.FC<LoginProps> = ({ handleForm, error }) => {
     const navigate = useNavigate();
-
-    console.log(error.length)
 
     if (error.length == 0) {
         navigate('/main')
@@ -147,7 +145,7 @@ type LoginProps = {
                                 <p className='text-dimWhite mt-4'>Al registrarte, aceptas los <span className='text-secondary'>términos y condiciones</span> de uso de la aplicación.</p>
                             </div>
 
-                            <Button className={'w-full inline-block text-center'} title={'Registrarse'}></Button>
+                            <Button className={'w-full inline-block text-center'} title={'Registrarse'} ></Button>
                         </form>
                     </div>
                 </div>
@@ -162,6 +160,6 @@ type LoginProps = {
     );
 };
 
-export default Login;
+export default SignUp;
 
 

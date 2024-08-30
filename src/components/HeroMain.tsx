@@ -6,13 +6,14 @@ import Button from '@/components/Button'
 import { UserData } from '@/types'
 import { FaRegClipboard } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
-
 import { SparklesCore } from "@/components/ui/Sparkles";
+
 
 const HeroMain = ({ userData }: UserData) => {
   return (
+    
     <>
-      <div className='w-full mx-auto md:mx-0 py-[5rem] grid md:grid-cols-2 text-center md:text-start relative z-[15!important] gap-[1rem] mt-[8rem]'>
+      <div className='w-full mx-auto md:mx-0 py-[5rem] grid md:grid-cols-2 text-center md:text-start relative z-[15!important] gap-[1rem] mt-[6rem] mb-[4rem]'>
         <div className={`h-full flex flex-col justify-center`}>
           <h1 className='text-white md:text-7xl text-5xl font-poppins ss:leading-[90px] leading-[75px] my-[1rem] md:my-[2.5rem]'>
             <span className='text-gradient'>Hola, {userData.name ? userData.name : 'Invitado'}!</span>
@@ -62,7 +63,7 @@ const HeroMain = ({ userData }: UserData) => {
               <p className='font-poppins text-[1.3rem] text-white'>Desafíos de programación</p>
               <p className='mb-[1.5rem] mt-[.7rem]'>Pon a prueba tus habilidades y mejora tu capacidad de resolución de problemas con los desafíos de codificación.</p>
 
-              <Link to={'/desafios'} className='flex items-center text-gradient relative' onMouseEnter={(e) => {
+              <Link to={'/challenges'} className='flex items-center text-gradient relative' onMouseEnter={(e) => {
                 const arrow = e.currentTarget.querySelector('svg');
                 if (arrow) {
                   arrow.style.animation = 'moveArrow 1s infinite alternate';
@@ -103,7 +104,7 @@ const HeroMain = ({ userData }: UserData) => {
 
               <p className='mb-[1.5rem] mt-[.7rem]'>Conéctese con otros desarrolladores, comparta conocimientos y colabore en proyectos.</p>
 
-              <Link to={'/desafios'} className='flex items-center text-gradient relative' onMouseEnter={(e) => {
+              <Link to={'/community'} className='flex items-center text-gradient relative' onMouseEnter={(e) => {
                 const arrow = e.currentTarget.querySelector('svg');
                 if (arrow) {
                   arrow.style.animation = 'moveArrow 1s infinite alternate';
@@ -134,6 +135,7 @@ const HeroMain = ({ userData }: UserData) => {
           </div>
         </div>
       </div >
+
     </>
 
   )

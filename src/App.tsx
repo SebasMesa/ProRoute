@@ -2,11 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import Inicio from "@/pages/Inicio";
 import Main from "@/pages/Main";
-import Login from "@/pages/Login";
+import SignUp from "@/pages/SignUp";
+import SignIn from "@/pages/SignIn";
 import NotFound from "@/components/NotFound";
 import Community from "@/pages/Community"
 import Account from '@/pages/Account'
 import Courses from '@/pages/Courses';
+import Challenges from '@/pages/Challenges'
+import Blog from '@/pages/Blog'
 import { Link, useNavigate } from 'react-router-dom';
 
 const App = () => {
@@ -51,6 +54,8 @@ const App = () => {
 
     setError(errors);
 
+
+
     // Actualiza el estado con los datos del usuario
     if (name && email && gender) {
       setUserData({
@@ -65,19 +70,23 @@ const App = () => {
 
 
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/account" element={<Account />} />
-          <Route path="/" element={<Inicio auth={auth} setAuth={setAuth}/>} />
-          <Route path='/login' element={<Login handleForm={handleForm} error={error} />} />
-          <Route path="/main" element={<Main userData={userData} />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Inicio auth={auth} setAuth={setAuth} />} />
+            <Route path="/account" element={<Account />} />
+            <Route path='/signUp' element={<SignUp handleForm={handleForm} error={error} />} />
+            <Route path='/signIn' element={<SignIn handleForm={handleForm} error={error} />} />
+            <Route path="/main" element={<Main userData={userData} />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/challenges" element={<Challenges />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+
+        </div>
+      </Router>
   );
 };
 

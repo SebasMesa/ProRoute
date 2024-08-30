@@ -43,7 +43,7 @@ const ContinuaCurso = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-10'>
                 {cursos.length > 0 ? (
                     cursos.map((curso) => (
-                        <CursosCard key={curso.id} image={curso.image} description={curso.description} title={curso.title} valor={curso.valor} />
+                        <CursosCard IfProgress={true} key={curso.id} image={curso.image} description={curso.description} title={curso.title} valor={curso.valor} />
                     ))
                 ) : (
                     <CursosCardEmpty />

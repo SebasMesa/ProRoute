@@ -31,7 +31,7 @@ const Inicio = ({auth, setAuth} : {auth : boolean, setAuth : boolean}) => {
 
       <header className={`${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
-          <Navbar links={links} auth={auth} setAuth={setAuth}/>
+          <Navbar links={links} typeOfLink='' main={false }/>
         </div>
       </header>
 

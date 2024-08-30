@@ -1,118 +1,101 @@
 import React, { useState } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from '../components/ui/SideBarAll';
-import {
-    IconArrowLeft,
-    IconBrandTabler,
-    IconSettings,
-    IconUserBolt,
-} from "@tabler/icons-react";
-import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { Spotlight } from "@/components/ui/Spotlight";
-import { motion } from "framer-motion";
+import styles from '@/styles'
+import CommunityChats from '@/components/CommunityChats'
+import Navbar from '@/components/Navbar'
+import Banner from '@/components/Banner'
+
 
 
 const Community = () => {
     const links = [
-        {
-            label: "Dashboard",
-            href: "#",
-            icon: (
-                <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-            ),
-        },
-        {
-            label: "Profile",
-            href: "#",
-            icon: (
-                <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-            ),
-        },
-        {
-            label: "Settings",
-            href: "#",
-            icon: (
-                <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-            ),
-        },
-        {
-            label: "Logout",
-            href: "#",
-            icon: (
-                <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-            ),
-        },
+        { text: 'Inicio', url: '/main' },
+        { text: 'Cursos', url: '/courses' },
+        { text: 'Comunidad', url: '/community' },
+        { text: 'Retos Programacion', url: '/challenges' },
+        { text: 'Blog', url: '/blog' },
     ];
 
-    const [open, setOpen] = useState(false);
 
     return (
-        <div
-            className={cn(
-                "rounded-md flex flex-col md:flex-row bg-glass-purple w-full flex-1 overflow-hidden",
-                "h-screen"
-            )}
-        >
-            <Sidebar open={open} setOpen={setOpen} animate={true}>
-                <SidebarBody className="justify-between gap-10">
-                    <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-                        <>
-                            <Logo />
-                        </>            <div className="mt-8 flex flex-col gap-2">
-                            {links.map((link, idx) => (
-                                <SidebarLink key={idx} link={link} className="bg-glass rounded-br-2xl rounded-tr-sm rounded-tl-2xl rounded-bl-sm justify-center"/>
-                            ))}
+
+        <>
+            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] `}>
+                <div className={`${styles.boxWidth}`}>
+                    <Navbar links={links} main={true} typeOfLink='Link' />
+                </div>
+            </header>
+
+
+            <main className={`bg-app ${styles.paddingX} ${styles.flexCenter} relative`}>
+                <div className={`${styles.marginY}`}>
+                    <Banner title='Comunidad' />
+                </div>
+            </main>
+
+            <main className={`${styles.paddingX} ${styles.flexCenter} relative`}>
+                <div className={`${styles.marginY} ${styles.boxWidth}`}>
+                    <section className="grid md:grid-cols-[2.5fr_1fr] gap-[2rem]">
+                        <div>
+                            <CommunityChats />
                         </div>
-                    </div>
-                    <div>
-                        <SidebarLink
-                            link={{
-                                label: "Tian Mesa",
-                                href: "/account",
-                                icon: (
-                                    <img
-                                        src="src/assets/user.jpeg"
-                                        className="h-7 w-7 flex-shrink-0 rounded-full"
-                                        alt="Avatar"
-                                    />
-                                ),
-                            }}
-                        />
-                    </div>
-                </SidebarBody>
-            </Sidebar>
-            <Dashboard />
-        </div>
+
+                        <div className="bg-glass px-[2rem] py-[2rem] rounded-lg md:w-full mx-[30px] h-fit sticky top-[1.5rem] left-0 ">
+                            <h2 className={`font-poppins font-[300] xs:text-[30px] text-[22px] text-white mb-[3rem]`}>Comunidades Recomendadas</h2>
+
+                            <div className="bg-glass-purple flex items-center px-[1rem] py-[1rem] my-[1rem] rounded-lg overflow-hidden">
+                                <div className="bg-gray-500 w-[35px] h-[35px] rounded-full mr-[1rem] flex-shrink-0 flex items-center justify-center text-[17px]">
+                                    P
+                                </div>
+                                <div className="text-white flex flex-col">
+                                    Python LatinoAmerica
+                                    <span className="text-dimWhite">12,345 miembros</span>
+                                </div>
+                            </div>
+
+
+                            <div className="bg-glass-purple flex items-center px-[1rem] py-[1rem] my-[1rem] rounded-lg overflow-hidden">
+                                <div className="bg-gray-500 w-[35px] h-[35px] rounded-full mr-[1rem] flex-shrink-0 flex items-center justify-center text-[17px]">
+                                    P
+                                </div>
+                                <div className="text-white flex flex-col">
+                                    Python LatinoAmerica
+                                    <span className="text-dimWhite">12,345 miembros</span>
+                                </div>
+                            </div>
+
+
+                            <div className="bg-glass-purple flex items-center px-[1rem] py-[1rem] my-[1rem] rounded-lg overflow-hidden">
+                                <div className="bg-gray-500 w-[35px] h-[35px] rounded-full mr-[1rem] flex-shrink-0 flex items-center justify-center text-[17px]">
+                                    P
+                                </div>
+                                <div className="text-white flex flex-col">
+                                    Python LatinoAmerica
+                                    <span className="text-dimWhite">12,345 miembros</span>
+                                </div>
+                            </div>
+
+
+
+                            <div className="bg-glass-purple flex items-center px-[1rem] py-[1rem] my-[1rem] rounded-lg overflow-hidden">
+                                <div className="bg-gray-500 w-[35px] h-[35px] rounded-full mr-[1rem] flex-shrink-0 flex items-center justify-center text-[17px]">
+                                    P
+                                </div>
+                                <div className="text-white flex flex-col">
+                                    Python LatinoAmerica
+                                    <span className="text-dimWhite">12,345 miembros</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+        </>
+
     );
 }
 
 export default Community
 
-export const Logo = () => {
-    return (
-        <Link
-            to={'/main'}
-            className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20 w-fit"
-        >
-            <div className="h-6 w-7 bg-blue-gradient rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0 ">
-
-            </div>
-            <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="font-medium text-black dark:text-white whitespace-pre"
-            >
-                <h2 className='text-white uppercase text-2xl font-anurati'>Pro<span className='text-secondary'>route</span></h2>
-            </motion.span>
-        </Link>
-    );
-};
-const Dashboard = () => {
-    return (
-        <div className="flex flex-1">
-            <div className="rounded-tl-2xl bg-primary w-full h-full">
-                <Spotlight />
-            </div>
-        </div>
-    );
-};

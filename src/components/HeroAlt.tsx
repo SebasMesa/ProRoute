@@ -1,14 +1,11 @@
 import React from 'react'
 import { ReactTyped } from "react-typed"; 
 import styles, { layout } from '../styles'
-import HeroImg from '../assets/hero2.svg'
-import ScrambleText from './ScrambleText';
 import ParticlesComponent from './ParticlesComponent';
-import { Link } from 'react-router-dom';
 
 const HeroAlt = () => {
   return (
-    <>
+    <div className='relative'>
       <div className='absolute z-[100]'>
         <ParticlesComponent id='particles' />
       </div>
@@ -26,7 +23,7 @@ const HeroAlt = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

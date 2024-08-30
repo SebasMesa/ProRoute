@@ -2,6 +2,7 @@ import React from 'react'
 import BlogCard from './BlogCard'
 import styles from '../styles'
 import Button from './Button'
+import { Link } from 'react-router-dom'
 import { ThoughtProcess, CareerDevelopment } from 'undraw-react'
 
 type Props = {
@@ -54,9 +55,9 @@ const Blog = () => {
 
       
 
-      <div>
+      <Link to={'/blog'}>
         <Button title='Ver más'></Button>
-      </div>
+      </Link>
     </div>
   )
 }
