@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Carousel from 'next-elastic-carousel';
-import Card from './RetosCard'
+import Card from './ui/RetosCard'
 import styles from '../styles';
 
 

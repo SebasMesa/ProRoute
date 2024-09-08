@@ -1,9 +1,9 @@
 import React from 'react'
-import CursosCard from './CursosCard'
-import styles from '../styles'
-import CursosCardEmpty from './CursosCardEmpty'
+import CursosCard from '@/components/ui/CursosCard'
+import styles from '@/styles'
+import CursosCardEmpty from '@/components/ui/CursosCardEmpty'
 import { Link } from 'react-router-dom'
-import Button from './Button'
+import Button from '@/components/ui/Button'
 import { FiBook } from "react-icons/fi";
 import { IoMdCode } from "react-icons/io";
 import { GoDatabase } from "react-icons/go";
@@ -50,7 +50,7 @@ const ContinuaCurso = () => {
                 )}
             </div>
 
-            <Link to={'/courses'} className='flex justify-end mt-[2rem]'>
+            <Link to={'/mycourses'} className='flex justify-end mt-[2rem]'>
                 <Button title={'Ver todos mis cursos'}></Button>
             </Link>
 

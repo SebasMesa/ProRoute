@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import styles from '@/styles'
-import CourseCard from '@/components/CursosCard'
+import CourseCard from '@/components/ui/CursosCard'
 import {FiBook} from "react-icons/fi";
 import Carousel from 'next-elastic-carousel';
 

@@ -2,34 +2,20 @@ import React, { useState } from 'react'
 import HeroMain from '@/components/HeroMain'
 import styles from '@/styles'
 import ContinuaCurso from '@/components/ContinuaCurso'
-import Blog from '@/components/Blog'
-import Footer from '@/components/Footer'
+import Blog from '@/components/blog/Blog'
+import Footer from '@/components/ui/Footer'
 import Newsletter from '@/components/Newsletter'
 import Retos from '@/components/Retos'
 import { UserData } from '@/types/'
 import Comunidades from '@/components/Comunidades'
 import { Community } from 'undraw-react';
 import { Link } from 'react-router-dom'
-import { AuroraBackground } from "@/components/ui/AuroraBackground";
-import Navbar from '@/components/Navbar'
+// import { AuroraBackground } from "@/components/ui/AuroraBackground";
+import Navbar from '@/components/ui/Navbar'
+import linksMain from '@/data/linksMain.json'
 
 
-
-
-
-
-interface MainProps {
-  userData: UserData;
-}
-
-const Main: React.FC<MainProps> = ({ userData }) => {
-  const links = [
-    { text: 'Inicio', url: '/main' },
-    { text: 'Cursos', url: '/courses' },
-    { text: 'Comunidad', url: '/community' },
-    { text: 'Retos Programacion', url: '/challenges' },
-    { text: 'Blog', url: '/blog' },
-  ];
+const Main = () => {
 
   return (
     <div className="rounded-tl-2xl bg-transparent w-full h-full overflow-hidden">
@@ -44,20 +30,18 @@ const Main: React.FC<MainProps> = ({ userData }) => {
 
         {/* <Modal /> */}
 
-        <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101]`}>
+        <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] bg-primary`}>
           <div className={`${styles.boxWidth}`}>
-            <Navbar links={links} main={true} typeOfLink='Link'/>
+            <Navbar links={linksMain.links} main={true} typeOfLink='Link'/>
           </div>
         </header>
 
 
-        <AuroraBackground>
             <div className={`${styles.paddingX} ${styles.flexCenter}`}>
               <div className={`${styles.boxWidth}`}>
-                <HeroMain userData={userData} />
+                <HeroMain />
               </div>
             </div>
-        </AuroraBackground>
 
 
         <section className={`${styles.paddingX} ${styles.flexCenter}] relative z-[15]`}>

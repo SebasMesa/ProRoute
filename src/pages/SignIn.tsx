@@ -1,21 +1,11 @@
 import React, { useState, useRef } from 'react';
-import ParticlesComponent from '../components/ParticlesComponent';
-import styles from '../styles';
-import Button from '../components/Button';
+import ParticlesComponent from '@/components/ui/ParticlesComponent';
+import styles from '@/styles';
+import Button from '@/components/ui/Button';
 import { Link, useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Footer from '@/components/ui/Footer';
 
-type LoginProps = {
-    handleForm: (e: React.FormEvent<HTMLFormElement>) => void;
-    error: string[];
-};
-
-const SignIn: React.FC<LoginProps> = ({ handleForm, error }) => {
-    const navigate = useNavigate();
-
-    if (error.length == 0) {
-        navigate('/main')
-    }
+const SignIn = () => {
     return (
         <>
             <section className='bg-primary min-h-screen relative font-rubik'>
@@ -34,15 +24,15 @@ const SignIn: React.FC<LoginProps> = ({ handleForm, error }) => {
                         <h2 className={`${styles.heading2} mt-8 md:w-[60%] z-[3]`}>Iniciar Sesion</h2>
                         <p className={`md:text-[1.1rem] text-dimWhite mt-4 md:w-[60%] w-[85%] text-center md:text-start`}>¡Tu camino hacia la excelencia en programación comienza aquí!</p>
 
-                        <form action="" className='text-dimWhite md:w-[450px] flex flex-col gap-5 mt-8 z-[2]' onSubmit={handleForm}>
-                            {error.length > 0 && (
+                        <form action="" className='text-dimWhite md:w-[450px] flex flex-col gap-5 mt-8 z-[2]'>
+                            {/* {error.length > 0 && (
                                 <ul>
                                     {error.map((err, index) => (
                                         <li key={index} className="text-red-500">{err}</li>
                                     ))}
                                 </ul>
                             )}
-
+ */}
                             <div>
                                 <label htmlFor="email">Correo Electrónico *</label>
                                 <input

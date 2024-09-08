@@ -1,36 +1,32 @@
 import React, { useState } from "react";
 import styles from '@/styles'
-import CommunityChats from '@/components/CommunityChats'
-import Navbar from '@/components/Navbar'
-import Banner from '@/components/Banner'
+import CommunityChats from '@/components/community/CommunityChats'
+import Navbar from '@/components/ui/Navbar'
+import Banner from '@/components/ui/Banner'
+import Footer from '@/components/ui/Footer'
+import linksMain from '@/data/linksMain.json'
+
 
 
 
 const Community = () => {
-    const links = [
-        { text: 'Inicio', url: '/main' },
-        { text: 'Cursos', url: '/courses' },
-        { text: 'Comunidad', url: '/community' },
-        { text: 'Retos Programacion', url: '/challenges' },
-        { text: 'Blog', url: '/blog' },
-    ];
 
 
     return (
 
         <>
-            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] `}>
+            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] bg-primary`}>
                 <div className={`${styles.boxWidth}`}>
-                    <Navbar links={links} main={true} typeOfLink='Link' />
+                    <Navbar links={linksMain.links} main={true} typeOfLink='Link' />
                 </div>
             </header>
 
 
-            <main className={`bg-app ${styles.paddingX} ${styles.flexCenter} relative`}>
+            <section className={`bg-app ${styles.paddingX} ${styles.flexCenter} relative`}>
                 <div className={`${styles.marginY}`}>
                     <Banner title='Comunidad' />
                 </div>
-            </main>
+            </section>
 
             <main className={`${styles.paddingX} ${styles.flexCenter} relative`}>
                 <div className={`${styles.marginY} ${styles.boxWidth}`}>
@@ -39,7 +35,7 @@ const Community = () => {
                             <CommunityChats />
                         </div>
 
-                        <div className="bg-glass px-[2rem] py-[2rem] rounded-lg md:w-full mx-[30px] h-fit sticky top-[1.5rem] left-0 ">
+                        <div className="bg-glass px-[2rem] py-[2rem] rounded-lg md:w-full mx-[30px] h-fit sticky top-[1.5rem] left-0 box-shadow">
                             <h2 className={`font-poppins font-[300] xs:text-[30px] text-[22px] text-white mb-[3rem]`}>Comunidades Recomendadas</h2>
 
                             <div className="bg-glass-purple flex items-center px-[1rem] py-[1rem] my-[1rem] rounded-lg overflow-hidden">
@@ -91,6 +87,10 @@ const Community = () => {
                     </section>
                 </div>
             </main>
+
+            <footer>
+                <Footer></Footer>
+            </footer>
 
         </>
 

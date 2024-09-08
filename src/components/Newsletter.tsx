@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import styles from '../styles';
-import Button from './Button';
+import styles from '@/styles';
+import Button from '@/components/ui/Button';
 
 const Newsletter = () => {
   return (

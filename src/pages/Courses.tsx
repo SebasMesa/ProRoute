@@ -1,29 +1,25 @@
 import React from 'react'
 import styles from '@/styles'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/ui/Navbar'
 import FirstCourses from '@/components/FirstCourses'
-import Footer from '@/components/Footer'
-import CoursesPopular from '@/components/CoursesPopular'
-import CoursesMentors from '@/components/CoursesMentors'
-import CoursesAll from '@/components/CoursesAll'
-import Banner from '@/components/Banner'
+import Footer from '@/components/ui/Footer'
+import CoursesPopular from '@/components/courses/CoursesPopular'
+import CoursesMentors from '@/components/courses/CoursesMentors'
+import CoursesAll from '@/components/inicio/CoursesAll'
+import Banner from '@/components/ui/Banner'
+import linksMain from '@/data/linksMain.json'
+
 
 const Courses = () => {
-  const links = [
-    { text: 'Inicio', url: '/main' },
-    { text: 'Cursos', url: '/courses' },
-    { text: 'Comunidad', url: '/community' },
-    { text: 'Retos Programacion', url: '/challenges' },
-    { text: 'Blog', url: '/blog' },
-  ];
+
 
   return (
     <>
 
 
-      <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[1000]`}>
+      <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[1001] bg-primary`}>
         <div className={`${styles.boxWidth}`}>
-          <Navbar links={links} main={true} typeOfLink='Link' />
+          <Navbar links={linksMain.links} main={true} typeOfLink='Link' />
         </div>
       </header>
 

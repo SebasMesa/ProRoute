@@ -1,23 +1,19 @@
 import React from 'react'
-import ChallengesHero from '@/components/ChallengesHero'
-import Navbar from '@/components/Navbar'
+import ChallengesHero from '@/components/challenges/ChallengesHero'
+import Navbar from '@/components/ui/Navbar'
 import styles from '@/styles'
-import Banner from '@/components/Banner'
+import Banner from '@/components/ui/Banner'
+import Footer from '@/components/ui/Footer'
+import linksMain from '@/data/linksMain.json'
+
 
 const Challenges = () => {
-    const links = [
-        { text: 'Inicio', url: '/main' },
-        { text: 'Cursos', url: '/courses' },
-        { text: 'Comunidad', url: '/community' },
-        { text: 'Retos Programacion', url: '/challenges' },
-        { text: 'Blog', url: '/blog' },
-    ];
 
     return (
         <>
-            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[1000] h-full`}>
+            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] bg-primary`}>
                 <div className={`${styles.boxWidth}`}>
-                    <Navbar links={links} main={true} typeOfLink='Link' />
+                    <Navbar links={linksMain.links} main={true} typeOfLink='Link' />
                 </div>
             </header>
 
@@ -28,13 +24,15 @@ const Challenges = () => {
             </main>
 
 
-
-
             <section className={`${styles.paddingX} ${styles.flexCenter}] relative z-[15]`}>
                 <div className={`${styles.boxWidth} ${styles.marginY}`}>
                     <ChallengesHero />
                 </div>
             </section>
+
+            <footer>
+                <Footer></Footer>
+            </footer>
         </>
     )
 }

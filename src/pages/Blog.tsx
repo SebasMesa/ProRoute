@@ -1,24 +1,19 @@
 import React from 'react'
-import BlogMain from '@/components/BlogMain'
+import BlogMain from '@/components/blog/BlogMain'
 import styles from '@/styles'
-import Navbar from '@/components/Navbar'
-import Banner from '@/components/Banner'
+import Navbar from '@/components/ui/Navbar'
+import Banner from '@/components/ui/Banner'
+import Footer from '@/components/ui/Footer'
+import linksMain from '@/data/linksMain.json'
 
 
 const Blog = () => {
-    const links = [
-        { text: 'Inicio', url: '/main' },
-        { text: 'Cursos', url: '/courses' },
-        { text: 'Comunidad', url: '/community' },
-        { text: 'Retos Programacion', url: '/challenges' },
-        { text: 'Blog', url: '/blog' },
-    ];
 
     return (
         <>
-            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] `}>
+            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] bg-primary`}>
                 <div className={`${styles.boxWidth}`}>
-                    <Navbar links={links} main={true} typeOfLink='Link' />
+                    <Navbar links={linksMain.links} main={true} typeOfLink='Link' />
                 </div>
             </header>
 
@@ -34,6 +29,11 @@ const Blog = () => {
                     <BlogMain />
                 </div>
             </main>
+
+
+            <footer className={`mt-[3rem]`}>
+                <Footer></Footer>
+            </footer>
         </>
     )
 }

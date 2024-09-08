@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from '../styles'
-import ComunidadesCard from './ComunidadesCard'
-import Button from './Button'
+import styles from '@/styles'
+import ComunidadesCard from '@/components/ui/ComunidadesCard'
+import Button from '@/components/ui/Button'
 import { Link } from 'react-router-dom'
-import pythonLatam from '../assets/pythonLatam.jpeg'
+import pythonLatam from '@/assets/pythonLatam.jpeg'
 
 interface Props {
     className?: string

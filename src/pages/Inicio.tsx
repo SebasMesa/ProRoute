@@ -1,19 +1,18 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import styles from '../styles'
-import Acerca from '../components/Acerca'
-import Hero from '../components/Hero'
-import HeroAlt from '../components/HeroAlt'
-import Ventajas from '../components/Ventajas'
-import Tiempo from '../components/Tiempo'
-import MarqueeCompo from '../components/MarqueeCompo'
-import Empieza from '../components/Empieza'
-import Tecnicas from '../components/Tecnicas'
-import Testimonios from '../components/Testimonios'
-import Faqs from '../components/Faqs'
-import Footer from '../components/Footer'
+import Navbar from '@/components/ui/Navbar'
+import styles from '@/styles'
+import Acerca from '@/components/inicio/Acerca'
+import Hero from '@/components/inicio/Hero'
+import HeroAlt from '@/components/inicio/HeroAlt'
+import Ventajas from '@/components/inicio/Ventajas'
+import Tiempo from '@/components/inicio/Tiempo'
+import MarqueeCompo from '@/components/ui/MarqueeCompo'
+import Empieza from '@/components/inicio/Empieza'
+import Testimonios from '@/components/inicio/Testimonios'
+import Faqs from '@/components/inicio/Faqs'
+import Footer from '@/components/ui/Footer'
 
-const Inicio = ({auth, setAuth} : {auth : boolean, setAuth : boolean}) => {
+const Inicio = () => {
   const links = [
     { text: 'Inicio', url: '#' },
     { text: 'Acerca De', url: '#acerca' },
@@ -78,7 +77,7 @@ const Inicio = ({auth, setAuth} : {auth : boolean, setAuth : boolean}) => {
             'Tu ·',
             'Puedes ·',
             'Lograrlo ·'
-          ]} direction='left'/>
+          ]} direction='left' speed={50}/>
           <MarqueeCompo descri={[
             'Sonrie😊 ·',
             'Respira😮‍💨 ·',
