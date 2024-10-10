@@ -3,10 +3,7 @@
         { "text": "Inicio", "url": "/main" },
         { "text": "Cursos", "url": "/courses" },
         { "text": "Comunidad", "url": "/community" },
-        { "text": "Retos Programacion", "url": "/challenges" },
-        { "text": "Blog", "url": "/blog" },
-        { "text": "Cuenta", "url": "/account" },
-        { "text": "Admin", "url": "/dashboardadmin" }
-
+        { "text": "Retos Programacion", "url": "/challenges" },        
+        { "text": "Blog", "url": "/blog" }
     ]
 }

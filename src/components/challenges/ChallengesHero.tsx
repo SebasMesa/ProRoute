@@ -21,16 +21,16 @@ const ChallengesHero = () => {
 
   return (
     <>
-      <section className='grid md:grid-cols-2 items-center gap-[1rem]'>
-        <div className=''>
+      <section className='flex items-center gap-[1rem] justify-between'>
+        <div className='w-[50%]'>
           <h2 className={`${styles.heading2} my-[2.5rem]`}>¿Listo para demostrar tus habilidades?</h2>
-          <p className={`${styles.paragraph} my-[1rem] `}>Enfrenta desafíos que te retarán a pensar de forma innovadora y a encontrar soluciones creativas. Cada desafío completado te acercará a la cima del ranking. ¡Conviértete en el mejor!</p>
+          <p className={`${styles.paragraph} my-[1rem]`}>Enfrenta desafíos que te retarán a pensar de forma innovadora y a encontrar soluciones creativas. Cada desafío completado te acercará a la cima del ranking. ¡Conviértete en el mejor!</p>
           <div>
             <Button title='Resolver Ahora'></Button>
           </div>
         </div>
 
-        <div className='bg-glass md:w-[400px] px-[1rem] py-[1rem] rounded-route mx-auto flex flex-col mt-[3rem] md:mt-0 img h-full'>
+        <div className='bg-glass md:w-[400px] px-[1rem] py-[1rem] rounded-route flex flex-col mt-[3rem] md:mt-0 img h-full'>
           <span className={`${styles.heading2} text-gradient`}>1100</span>
           <span className={`text-[25px] text-dimWhite font-rubik`}>Usuarios</span>
 

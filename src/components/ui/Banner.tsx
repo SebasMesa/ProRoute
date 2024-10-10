@@ -13,7 +13,7 @@ const CoursesHero = ({ title } : CoursesHeroProps) => {
                 <ParticlesComponent id='particles' />
             </div>
 
-            <h1 className={`${styles.heading} ${styles.paddingY} my-[3rem] text-gradient`}>{title}</h1>
+            <h1 className={`${styles.heading} my-[0rem] text-gradient`}>{title}</h1>
         </>
     )
 }

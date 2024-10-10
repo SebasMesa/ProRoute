@@ -18,7 +18,7 @@ const HeroMain = () => {
       <div className='w-full mx-auto md:mx-0 py-[5rem] grid md:grid-cols-2 text-center md:text-start relative z-[15!important] h-[80vh] items-center mt-[1rem]'>
         <div className={`h-full flex flex-col justify-center`}>
           <h1 className='text-white md:text-7xl text-5xl font-poppins ss:leading-[90px] leading-[75px] my-[1rem] md:my-[2.5rem]'>
-            <span className='text-gradient'>Hola, Invitado!</span>
+            <span className='text-gradient'>Desbloquea tu potencial con nuestras guias</span>
           </h1>
 
           <p className={`${styles.paragraph} max-w-[550px] mx-auto md:text-[1.4rem] text-[1.3rem] md:mx-0`}>

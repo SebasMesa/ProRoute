@@ -38,7 +38,7 @@ const Comunidades = () => {
 
                 <div className='mt-[3rem] grid grid-cols-1 md:grid-cols-3 gap-[1.5rem]'>
                     {communities.map((community) => (
-                        <ComunidadesCard title={community.title} description={community.description} members={community.members} 
+                        <ComunidadesCard key={community.id} title={community.title} description={community.description} members={community.members} 
                         image={community.image} className={community.className}/>
 
                     ))}

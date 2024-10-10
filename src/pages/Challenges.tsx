@@ -11,17 +11,17 @@ const Challenges = () => {
 
     return (
         <>
-            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] bg-primary`}>
+            <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] bg-primary top-0`}>
                 <div className={`${styles.boxWidth}`}>
                     <Navbar links={linksMain.links} main={true} typeOfLink='Link' />
                 </div>
             </header>
 
-            <main className={`bg-app ${styles.paddingX} ${styles.flexCenter} relative`}>
-                <div className={`${styles.marginY}`}>
-                    <Banner title='Retos Programacion' />
+            <section className={`bg-app ${styles.paddingX} ${styles.flexCenter} relative mt-[80px]`}>
+                <div className={`my-[1.5rem]`}>
+                    <Banner title='Retos de programación' />
                 </div>
-            </main>
+            </section>
 
 
             <section className={`${styles.paddingX} ${styles.flexCenter}] relative z-[15]`}>

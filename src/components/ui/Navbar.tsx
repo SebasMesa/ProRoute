@@ -38,7 +38,7 @@ const Navbar = ({ links, typeOfLink, main }: { links: { text: string, url: strin
                     </Link>
                 </div>
 
-                <Link to={'/account'} className={`${main ? 'block' : 'hidden'} w-[40px] h-[40px] bg-gray-500 rounded-full flex items-center justify-center text-white`}>
+                <Link to={'/myaccount'} className={`${main ? 'block' : 'hidden'} w-[40px] h-[40px] bg-gray-500 rounded-full flex items-center justify-center text-white`}>
                     S
                 </Link>
 

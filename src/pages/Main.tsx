@@ -9,21 +9,36 @@ import Retos from '@/components/Retos'
 import { UserData } from '@/types/'
 import Comunidades from '@/components/Comunidades'
 import { Community } from 'undraw-react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Button from "@/components/ui/Button"
 // import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import Navbar from '@/components/ui/Navbar'
 import linksMain from '@/data/linksMain.json'
+import { useAuth } from '@/context/authContext'
+
 
 
 const Main = () => {
 
+  const { user, logout, loading } = useAuth();
+  const navigate = useNavigate()
+
+  const handleLogout = async () => {
+    await logout()
+    navigate("/")
+  }
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+
   return (
+
     <div className="rounded-tl-2xl bg-transparent w-full h-full overflow-hidden">
       <div className='bg-primary w-full relative overflow-hidden'>
         <div className='absolute w-[1000px] h-[1020px] blue__gradient top-[60rem] z-[10] opacity-[.15!important] right-[-10rem]'></div>
         <div className='absolute w-[2000px] h-[1020px] purple__gradient top-[200rem] z-[10] opacity-[0.04!important]'></div>
-
-
 
         {/* ---------------- Componente de Navbar ----------------------- */}
 
@@ -32,16 +47,28 @@ const Main = () => {
 
         <header className={`${styles.paddingX} ${styles.flexStart} fixed w-full z-[101] bg-primary`}>
           <div className={`${styles.boxWidth}`}>
-            <Navbar links={linksMain.links} main={true} typeOfLink='Link'/>
+            <Navbar links={linksMain.links} main={true} typeOfLink='Link' />
           </div>
         </header>
 
+        <div className={`${styles.paddingX} ${styles.flexCenter} pt-[10rem] text-white`}>
+          <div className={`${styles.boxWidth}`}>
+          <h1 className='text-5xl text-white'>Welcome {user?.email}</h1>
+            <p>Haz completado un 75% de tus proyectos</p>
 
-            <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-              <div className={`${styles.boxWidth}`}>
-                <HeroMain />
-              </div>
-            </div>
+            <button onClick={handleLogout}>
+                LogOut
+            </button>
+          </div>
+        </div>
+
+
+
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.boxWidth}`}>
+            <HeroMain />
+          </div>
+        </div>
 
 
         <section className={`${styles.paddingX} ${styles.flexCenter}] relative z-[15]`}>

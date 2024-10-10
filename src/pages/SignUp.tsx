@@ -1,18 +1,57 @@
-import React, { useState, useRef } from 'react';
+import React, { useState} from 'react';
 import ParticlesComponent from '@/components/ui/ParticlesComponent';
 import styles from '@/styles';
 import Button from '@/components/ui/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from '@/components/ui/Footer';
+import { useAuth } from '@/context/authContext';
+
+type User = {
+    email: string
+    password: string
+}
 
 
 const SignUp = () => {
+
+    const [user, setUser] = useState({
+        email: '',
+        password: '',
+    })
+
+    const {signup} = useAuth()
+    const navigate = useNavigate()
+    const [error, setError] = useState('')
+
+    const handleChange = ({target: {name, value} }: {target: {name: string, value: string}}) => {
+        setUser({...user, [name]: value})
+    }
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        try {
+            await signup(user)
+            navigate("/main")
+        } catch (error : any) {
+            if (error.code === 'auth/email-already-in-use') {
+                setError('Email already in use')
+            } else if (error.code === 'auth/weak-password') {
+                setError('Password should be at least 6 characters')
+            } else if (error.code === 'auth/invalid-email') {
+                setError('Invalid email')
+            } else {
+                setError('Something went wrong')
+            }   
+
+        }
+    }
+
     return (
         <>
             <section className='bg-primary min-h-screen relative font-rubik'>
-                <div className='absolute z-[100]'>
+                {/* <div className='absolute z-[100]'>
                     <ParticlesComponent id='particles' />
-                </div>
+                </div> */}
 
                 <div className={`w-full min-h-screen grid grid-cols-1 md:grid-cols-2`}>
                     <div className={`${styles.padding} text-white relative hidden md:block`}>
@@ -39,22 +78,23 @@ const SignUp = () => {
                         <h2 className={`${styles.heading2} mt-8 md:w-[60%] z-[3]`}>Registrarse</h2>
                         <p className={`md:text-[1.1rem] text-dimWhite mt-4 md:w-[60%] w-[85%] text-center md:text-start`}>¡Tu camino hacia la excelencia en programación comienza aquí!</p>
 
-                        <form action="" className='text-dimWhite md:w-[450px] flex flex-col gap-5 mt-8 z-[2]'>
-                            {/* {error.length > 0 && (
+                        <form action="" className='text-dimWhite md:w-[450px] flex flex-col gap-5 mt-8 z-[2]' onSubmit={handleSubmit}>
+                            {error && (
                                 <ul>
-                                    {error.map((err, index) => (
-                                        <li key={index} className="text-red-500">{err}</li>
-                                    ))}
+                                    <li className="text-red-500">{error}</li>
                                 </ul>
-                            )} */}
+                            )}
+
+                            {/* {error && <p>{error}</p>} */}
                             <div>
                                 <label htmlFor="username">Nombre *</label>
                                 <input
                                     type="text"
-                                    name="user"
+                                    name="name"
                                     className='w-full bg-transparent border border-gray-500 p-3 rounded-lg mt-2'
                                     placeholder='Username'
                                     id="username"
+                                    onChange={handleChange}
                                 />
                             </div>
 
@@ -66,6 +106,8 @@ const SignUp = () => {
                                     className='w-full bg-transparent border border-gray-500 p-3 rounded-lg mt-2'
                                     placeholder='Email'
                                     id="email"
+                                    onChange={handleChange}
+
                                 />
                             </div>
 
@@ -77,6 +119,8 @@ const SignUp = () => {
                                     className='w-full bg-transparent border border-gray-500 p-3 rounded-lg mt-2'
                                     placeholder='Password'
                                     id="password"
+                                    onChange={handleChange}
+
                                 />
                             </div>
 
@@ -88,6 +132,7 @@ const SignUp = () => {
                                     className='w-full bg-transparent border border-gray-500 p-3 rounded-lg mt-2'
                                     placeholder='Confirm Password'
                                     id="confirmPassword"
+                                    onChange={handleChange}
                                 />
                             </div>
 
@@ -102,6 +147,8 @@ const SignUp = () => {
                                             id="male"
                                             value="male"
                                             className='border border-gray-500 p-3 rounded-lg mr-2'
+                                            onChange={handleChange}
+                                            
                                         />
                                         <label htmlFor="male">Masculino</label>
                                     </div>
@@ -113,6 +160,8 @@ const SignUp = () => {
                                             id="female"
                                             value="female"
                                             className='border border-gray-500 p-3 rounded-lg mr-2'
+                                            onChange={handleChange}
+
                                         />
                                         <label htmlFor="female">Femenino</label>
                                     </div>
@@ -124,6 +173,8 @@ const SignUp = () => {
                                             id="other"
                                             value="other"
                                             className='border border-gray-500 p-3 rounded-lg mr-2'
+                                            onChange={handleChange}
+
                                         />
                                         <label htmlFor="other">Otro</label>
                                     </div>

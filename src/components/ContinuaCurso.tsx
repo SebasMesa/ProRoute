@@ -35,8 +35,6 @@ const ContinuaCurso = () => {
         },
     ]
 
-    console.log(cursos.length)
-
     return (
         <>
             <h2 className={`${styles.heading2}`}>Continua donde lo dejaste!</h2>

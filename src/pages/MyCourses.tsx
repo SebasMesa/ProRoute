@@ -26,11 +26,11 @@ const MyCourses = () => {
             </header>
 
 
-            <main className={`bg-app ${styles.paddingX} ${styles.flexCenter} relative`}>
-                <div className={`${styles.marginY}`}>
-                    <Banner title='Mis Cursos' />
+            <section className={`bg-app ${styles.paddingX} ${styles.flexCenter} relative mt-[80px]`}>
+                <div className={`my-[1.5rem]`}>
+                    <Banner title='Mis cursos' />
                 </div>
-            </main>
+            </section>
 
             <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter} relative z-[115]`}>
                 <div className={`${styles.boxWidth} ${styles.marginY}`}>

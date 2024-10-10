@@ -4,14 +4,14 @@ import CommunityChatsCards from '@/components/ui/CommunityChatsCards'
 const CommunityChats = () => {
     return (
         <div>  
-            <CommunityChatsCards/>
-            <CommunityChatsCards/>
-            <CommunityChatsCards/>
-            <CommunityChatsCards/>
-            <CommunityChatsCards/>
-            <CommunityChatsCards/>
-            <CommunityChatsCards/>
-            <CommunityChatsCards/>
+            <CommunityChatsCards img={true}/>
+            <CommunityChatsCards img={false}/>
+            <CommunityChatsCards img={true}/>
+            <CommunityChatsCards img={false}/>
+            <CommunityChatsCards img={false}/>
+            <CommunityChatsCards img={false}/>
+            <CommunityChatsCards img={true}/>
+            <CommunityChatsCards img={false}/>
 
         </div>
     )

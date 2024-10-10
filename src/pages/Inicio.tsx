@@ -51,12 +51,12 @@ const Inicio = () => {
 
       {/* ---------------- Componente de Ventajas ----------------------- */}
 
-      <section className={`${styles.paddingX} ${styles.flexCenter}`}>
+      {/* <section className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Ventajas />
         </div>
       </section>
-
+ */}
       {/* ---------------- Componente de Tiempo ----------------------- */}
 
       <section className={`${styles.paddingX} ${styles.flexCenter}`}>
