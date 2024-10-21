@@ -1,0 +1,8 @@
+{
+    "links": [
+        { "text": "Cursos", "url": "/courses" },
+        { "text": "Comunidad", "url": "/community" },
+        { "text": "Retos Programacion", "url": "/challenges" },        
+        { "text": "Blog", "url": "/blog" }
+    ]
+}
